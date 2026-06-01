@@ -60,21 +60,23 @@ const palette: Swatch[] = [
 export function PaletteSlide() {
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Цветовая палитра">
-      <div className="grid h-full grid-cols-5 gap-5">
-        {palette.map((c) => (
-          <div key={c.name} className="flex flex-col overflow-hidden rounded-xl border border-border bg-card">
-            <div className={`h-28 ${c.style}`} />
-            <div className="flex flex-col gap-2 p-4">
-              <h3 className="font-serif text-xl font-semibold text-espresso">{c.name}</h3>
-              <dl className="space-y-1 text-[13px] leading-tight text-muted-foreground">
-                <div className="flex justify-between"><dt>HEX</dt><dd className="font-mono text-espresso">{c.hex}</dd></div>
-                <div className="flex justify-between"><dt>RGB</dt><dd className="font-mono text-espresso">{c.rgb}</dd></div>
-                <div className="flex justify-between"><dt>CMYK</dt><dd className="font-mono text-espresso">{c.cmyk}</dd></div>
-                <div className="flex justify-between"><dt>PANTONE</dt><dd className="font-mono text-espresso">{c.pantone}</dd></div>
-              </dl>
+      <div className="flex h-full items-center">
+        <div className="grid w-full grid-cols-5 gap-5">
+          {palette.map((c) => (
+            <div key={c.name} className="flex flex-col overflow-hidden rounded-xl border border-border bg-card">
+              <div className={`h-24 ${c.style}`} />
+              <div className="flex flex-col gap-2 p-4">
+                <h3 className="font-serif text-lg font-semibold text-espresso">{c.name}</h3>
+                <dl className="space-y-1 text-[12px] leading-tight text-muted-foreground">
+                  <div className="flex justify-between"><dt>HEX</dt><dd className="font-mono text-espresso">{c.hex}</dd></div>
+                  <div className="flex justify-between"><dt>RGB</dt><dd className="font-mono text-espresso">{c.rgb}</dd></div>
+                  <div className="flex justify-between"><dt>CMYK</dt><dd className="font-mono text-espresso">{c.cmyk}</dd></div>
+                  <div className="flex justify-between"><dt>PANTONE</dt><dd className="font-mono text-espresso">{c.pantone}</dd></div>
+                </dl>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </ContentSlide>
   )
@@ -118,25 +120,27 @@ export function PaletteRationaleSlide() {
 export function TypographySlide() {
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Типографика">
-      <div className="grid h-full grid-cols-2 gap-8">
-        <Card className="flex flex-col gap-4">
-          <Eyebrow>Заголовочный · Serif</Eyebrow>
-          <p className="font-serif text-6xl font-semibold text-espresso">Fraunces</p>
-          <p className="font-serif text-xl text-muted-foreground">Характерный, тёплый, ремесленный</p>
-          <div className="font-serif text-espresso">
-            <p className="text-2xl font-light">Аа Бб Вв Гг</p>
-            <p className="text-base text-muted-foreground">0123456789 · Light / Medium / SemiBold</p>
-          </div>
-        </Card>
-        <Card className="flex flex-col gap-4">
-          <Eyebrow>Текстовый · Sans</Eyebrow>
-          <p className="text-6xl font-semibold text-espresso">Inter</p>
-          <p className="text-xl leading-relaxed text-muted-foreground">Чистый, читаемый, нейтральный</p>
-          <div className="text-espresso">
-            <p className="text-2xl">Аа Бб Вв Гг</p>
-            <p className="text-base text-muted-foreground">0123456789 · Regular / Medium / SemiBold</p>
-          </div>
-        </Card>
+      <div className="flex h-full items-center">
+        <div className="grid w-full grid-cols-2 gap-8">
+          <Card className="flex flex-col gap-4 py-8">
+            <Eyebrow>Заголовочный · Serif</Eyebrow>
+            <p className="font-serif text-5xl font-semibold text-espresso">Fraunces</p>
+            <p className="font-serif text-lg text-muted-foreground">Характерный, тёплый, ремесленный</p>
+            <div className="font-serif text-espresso">
+              <p className="text-xl font-light">Аа Бб Вв Гг</p>
+              <p className="text-sm text-muted-foreground">0123456789 · Light / Medium / SemiBold</p>
+            </div>
+          </Card>
+          <Card className="flex flex-col gap-4 py-8">
+            <Eyebrow>Текстовый · Sans</Eyebrow>
+            <p className="text-5xl font-semibold text-espresso">Inter</p>
+            <p className="text-lg leading-relaxed text-muted-foreground">Чистый, читаемый, нейтральный</p>
+            <div className="text-espresso">
+              <p className="text-xl">Аа Бб Вв Гг</p>
+              <p className="text-sm text-muted-foreground">0123456789 · Regular / Medium / SemiBold</p>
+            </div>
+          </Card>
+        </div>
       </div>
     </ContentSlide>
   )
@@ -261,14 +265,14 @@ const icons: { label: string; path: React.ReactNode }[] = [
 export function IconsSlide() {
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Иконки и графика">
-      <div className="flex h-full flex-col gap-6">
+      <div className="flex h-full flex-col justify-center gap-6">
         <p className="max-w-3xl text-pretty text-lg leading-relaxed text-muted-foreground">
           Линейные иконки с единой толщиной обводки 1.8 px и скруглёнными концами.
           Простые, тёплые и узнаваемые — в стилистике ремесленного бренда.
         </p>
-        <div className="grid flex-1 grid-cols-6 gap-5">
+        <div className="grid grid-cols-6 gap-5">
           {icons.map((ic) => (
-            <div key={ic.label} className="flex flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card text-espresso">
+            <div key={ic.label} className="flex flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card py-10 text-espresso">
               {ic.path}
               <span className="text-sm text-muted-foreground">{ic.label}</span>
             </div>

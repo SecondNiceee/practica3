@@ -186,9 +186,10 @@ export function AudienceSlide() {
   ]
   return (
     <ContentSlide index="01" kicker="Кому мы нужны" title="Целевая аудитория">
-      <div className="grid h-full grid-cols-3 gap-6">
-        {personas.map((p) => (
-          <Card key={p.name} className="flex flex-col">
+      <div className="flex h-full items-center">
+        <div className="grid w-full grid-cols-3 gap-6">
+          {personas.map((p) => (
+            <Card key={p.name} className="flex flex-col">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-amber/20 font-serif text-2xl font-semibold text-caramel">
                 {p.name.charAt(0)}
@@ -207,6 +208,7 @@ export function AudienceSlide() {
             </div>
           </Card>
         ))}
+        </div>
       </div>
     </ContentSlide>
   )
