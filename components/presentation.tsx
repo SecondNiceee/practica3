@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight, Download, Grid2x2, X } from "lucide-react"
-import html2pdf from "html2pdf.js"
 import { slides } from "@/components/slides/registry"
 import { cn } from "@/lib/utils"
 
@@ -18,6 +17,8 @@ export function Presentation() {
   const exportToPdf = useCallback(async () => {
     const element = printRootRef.current
     if (!element) return
+
+    const html2pdf = (await import("html2pdf.js")).default
 
     const options = {
       margin: 0,
