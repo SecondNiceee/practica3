@@ -28,15 +28,11 @@ export function TitleSlide() {
         <div className="grid grid-cols-2 gap-x-10 gap-y-4 border-t border-cream/15 pt-8 text-sm">
           <div>
             <p className="text-cream/45">Студент</p>
-            <p className="text-cream">Фамилия Имя · Группа 000</p>
-          </div>
-          <div>
-            <p className="text-cream/45">Руководитель</p>
-            <p className="text-cream">Фамилия И. О.</p>
+            <p className="text-cream">Титов Николай ТКБО-02-23</p>
           </div>
           <div>
             <p className="text-cream/45">Дисциплина</p>
-            <p className="text-cream">Дизайн фирменного стиля</p>
+            <p className="text-cream">Проектирование интерфейсных решений</p>
           </div>
           <div>
             <p className="text-cream/45">Год</p>
