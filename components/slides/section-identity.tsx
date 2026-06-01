@@ -60,7 +60,7 @@ const palette: Swatch[] = [
 export function PaletteSlide() {
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Цветовая палитра">
-      <div className="grid grid-cols-5 gap-5">
+      <div className="grid h-full grid-cols-5 gap-5">
         {palette.map((c) => (
           <div key={c.name} className="flex flex-col overflow-hidden rounded-xl border border-border bg-card">
             <div className={`h-28 ${c.style}`} />
@@ -118,7 +118,7 @@ export function PaletteRationaleSlide() {
 export function TypographySlide() {
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Типографика">
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid h-full grid-cols-2 gap-8">
         <Card className="flex flex-col gap-4">
           <Eyebrow>Заголовочный · Serif</Eyebrow>
           <p className="font-serif text-6xl font-semibold text-espresso">Fraunces</p>
@@ -170,7 +170,7 @@ export function LogoSlide() {
 
 /* 19 — Охранное поле и недопустимое использование */
 export function LogoRulesSlide() {
-  const donts = ["Не растягивать", "Не менять цвета", "Не наклонять", "Не добавлять тени"]
+  const donts = ["Не растягивать", "Не менять цвета", "Не наклонять", "Не ��обавлять тени"]
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Правила использования">
       <div className="grid h-full grid-cols-2 gap-8">
@@ -261,14 +261,14 @@ const icons: { label: string; path: React.ReactNode }[] = [
 export function IconsSlide() {
   return (
     <ContentSlide index="03" kicker="Фирменный стиль" title="Иконки и графика">
-      <div className="flex flex-col gap-6">
+      <div className="flex h-full flex-col gap-6">
         <p className="max-w-3xl text-pretty text-lg leading-relaxed text-muted-foreground">
           Линейные иконки с единой толщиной обводки 1.8 px и скруглёнными концами.
           Простые, тёплые и узнаваемые — в стилистике ремесленного бренда.
         </p>
-        <div className="grid grid-cols-6 gap-5">
+        <div className="grid flex-1 grid-cols-6 gap-5">
           {icons.map((ic) => (
-            <div key={ic.label} className="flex flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card py-8 text-espresso">
+            <div key={ic.label} className="flex flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card text-espresso">
               {ic.path}
               <span className="text-sm text-muted-foreground">{ic.label}</span>
             </div>

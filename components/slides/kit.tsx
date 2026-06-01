@@ -12,7 +12,7 @@ export function SlideFrame({
   return (
     <div
       className={cn(
-        "print-slide relative flex w-full bg-cream text-espresso",
+        "print-slide relative flex h-full w-full bg-cream text-espresso",
         className,
       )}
     >
@@ -82,7 +82,7 @@ export function ContentSlide({
   return (
     <SlideFrame className="flex-col px-20 py-14">
       <SlideHeader index={index} kicker={kicker} title={title} />
-      <div className="mt-8">{children}</div>
+      <div className="mt-8 flex-1">{children}</div>
     </SlideFrame>
   )
 }
