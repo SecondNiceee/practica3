@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight, Download, Grid2x2, X } from "lucide-react"
+import html2pdf from "html2pdf.js"
 import { slides } from "@/components/slides/registry"
 import { cn } from "@/lib/utils"
 
@@ -10,8 +11,25 @@ export function Presentation() {
   const [showGrid, setShowGrid] = useState(false)
   const [scale, setScale] = useState(1)
   const stageRef = useRef<HTMLDivElement>(null)
+  const printRootRef = useRef<HTMLDivElement>(null)
 
   const total = slides.length
+
+  const exportToPdf = useCallback(async () => {
+    const element = printRootRef.current
+    if (!element) return
+
+    const options = {
+      margin: 0,
+      filename: "presentation.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true, logging: false },
+      jsPDF: { format: [1280, 720], orientation: "landscape", unit: "px" },
+      pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+    }
+
+    html2pdf().set(options).from(element).save()
+  }, [])
 
   const go = useCallback(
     (dir: number) => setCurrent((c) => Math.min(total - 1, Math.max(0, c + dir))),
@@ -69,7 +87,7 @@ export function Presentation() {
               <span className="hidden sm:inline">Все слайды</span>
             </button>
             <button
-              onClick={() => window.print()}
+              onClick={exportToPdf}
               className="flex items-center gap-2 rounded-full bg-amber px-4 py-2 text-sm font-semibold text-espresso-deep transition hover:opacity-90"
             >
               <Download className="h-4 w-4" />
@@ -180,7 +198,7 @@ export function Presentation() {
       )}
 
       {/* Версия для печати: все слайды подряд (видна только при экспорте в PDF) */}
-      <div className="print-root hidden">
+      <div ref={printRootRef} className="print-root hidden">
         {slides.map((s, i) => (
           <div key={i}>{s.node}</div>
         ))}
