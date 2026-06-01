@@ -114,7 +114,7 @@ export function WireframeSlide() {
 export function UiKitSlide() {
   return (
     <ContentSlide index="04" kicker="Дизайн сайта" title="UI-кит">
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid h-full grid-cols-3 gap-5">
         <Card className="space-y-4">
           <Eyebrow>Кнопки</Eyebrow>
           <div className="space-y-3">

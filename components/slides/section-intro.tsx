@@ -148,7 +148,7 @@ export function MissionSlide() {
             в которую хочется возвращаться.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid h-full grid-cols-2 gap-5">
           {values.map(([t, d]) => (
             <Card key={t} className="flex flex-col gap-3">
               <CremaMark className="h-7 w-7 text-amber" />
@@ -186,7 +186,7 @@ export function AudienceSlide() {
   ]
   return (
     <ContentSlide index="01" kicker="Кому мы нужны" title="Целевая аудитория">
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid h-full grid-cols-3 gap-6">
         {personas.map((p) => (
           <Card key={p.name} className="flex flex-col">
             <div className="flex items-center gap-4">
@@ -226,7 +226,7 @@ export function UspSlide() {
           «КРЕМА» — единственная кофейня в районе, где спешелти-зерно обжаривается
           на месте, а каждая чашка превращается в осознанный ритуал.
         </p>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 self-end">
           {usps.map(([t, d], i) => (
             <Card key={t} className="flex flex-col gap-3">
               <span className="font-serif text-2xl font-light text-amber">

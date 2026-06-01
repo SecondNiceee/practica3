@@ -11,10 +11,10 @@ export function Presentation() {
       </header>
 
       {/* Все слайды как секции */}
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-6 px-8 py-8">
         {slides.map((s, i) => (
-          <section key={i} className="flex min-h-screen items-center justify-center px-4 py-8">
-            <div className="w-full max-w-[1280px] overflow-hidden rounded-xl shadow-2xl ring-1 ring-cream/10">
+          <section key={i} className="h-[720px] w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-cream/10">
+            <div className="h-full w-full">
               {s.node}
             </div>
           </section>
