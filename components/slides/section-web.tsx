@@ -114,7 +114,7 @@ export function WireframeSlide() {
 export function UiKitSlide() {
   return (
     <ContentSlide index="04" kicker="Дизайн сайта" title="UI-кит">
-      <div className="grid h-full grid-cols-3 gap-5">
+      <div className="grid grid-cols-3 gap-5">
         <Card className="space-y-4">
           <Eyebrow>Кнопки</Eyebrow>
           <div className="space-y-3">
@@ -177,22 +177,22 @@ export function MenuPageSlide() {
 export function ResponsiveSlide() {
   return (
     <ContentSlide index="04" kicker="Дизайн сайта" title="Адаптивность">
-      <div className="flex h-full items-center justify-center gap-10">
-        <div className="flex h-full max-h-[420px] flex-col items-center gap-3">
-          <BrowserFrame url="tablet · 768px" className="h-full w-[300px]" scrollable>
+      <div className="flex items-center justify-center gap-10">
+        <div className="flex max-h-[420px] flex-col items-center gap-3">
+          <BrowserFrame url="tablet · 768px" className="h-[380px] w-[300px]" scrollable>
             <PhoneMockup />
           </BrowserFrame>
           <span className="text-sm text-muted-foreground">Планшет</span>
         </div>
-        <div className="flex h-full max-h-[420px] flex-col items-center gap-3">
-          <div className="flex h-full w-[220px] flex-col overflow-hidden rounded-[2rem] border-[6px] border-espresso bg-card">
-            <div className="flex justify-center bg-espresso py-1.5">
-              <span className="h-1 w-12 rounded-full bg-cream/30" />
+        <div className="flex max-h-[420px] flex-col items-center gap-3">
+            <div className="flex h-[380px] w-[220px] flex-col overflow-hidden rounded-[2rem] border-[6px] border-espresso bg-card">
+              <div className="flex justify-center bg-espresso py-1.5">
+                <span className="h-1 w-12 rounded-full bg-cream/30" />
+              </div>
+              <div className="flex-1 overflow-y-clip">
+                <PhoneMockup />
+              </div>
             </div>
-            <div className="flex-1 overflow-y-auto">
-              <PhoneMockup />
-            </div>
-          </div>
           <span className="text-sm text-muted-foreground">Смартфон</span>
         </div>
         <div className="max-w-xs space-y-4">

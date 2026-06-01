@@ -12,7 +12,7 @@ export function SlideFrame({
   return (
     <div
       className={cn(
-        "print-slide relative flex h-[720px] w-[1280px] shrink-0 overflow-hidden bg-cream text-espresso",
+        "print-slide relative flex w-full bg-cream text-espresso",
         className,
       )}
     >
@@ -80,9 +80,9 @@ export function ContentSlide({
   children: ReactNode
 }) {
   return (
-    <SlideFrame className="flex-col px-20 py-16">
+    <SlideFrame className="flex-col px-20 py-14">
       <SlideHeader index={index} kicker={kicker} title={title} />
-      <div className="mt-10 flex-1">{children}</div>
+      <div className="mt-8">{children}</div>
     </SlideFrame>
   )
 }
