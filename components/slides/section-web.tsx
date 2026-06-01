@@ -181,7 +181,7 @@ export function ResponsiveSlide() {
     <ContentSlide index="04" kicker="Дизайн сайта" title="Адаптивность">
       <div className="flex items-center justify-center gap-10">
         <div className="flex max-h-[420px] flex-col items-center gap-3">
-          <BrowserFrame url="tablet · 768px" className="h-[380px] w-[300px]" scrollable>
+          <BrowserFrame url="tablet · 768px" className="h-[380px] w-[300px]">
             <PhoneMockup />
           </BrowserFrame>
           <span className="text-sm text-muted-foreground">Планшет</span>
