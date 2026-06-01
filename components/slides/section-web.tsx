@@ -114,9 +114,10 @@ export function WireframeSlide() {
 export function UiKitSlide() {
   return (
     <ContentSlide index="04" kicker="Дизайн сайта" title="UI-кит">
-      <div className="grid h-full grid-cols-3 gap-5">
-        <Card className="space-y-4">
-          <Eyebrow>Кнопки</Eyebrow>
+      <div className="flex h-full items-center">
+        <div className="grid w-full grid-cols-3 gap-5">
+          <Card className="space-y-4">
+            <Eyebrow>Кнопки</Eyebrow>
           <div className="space-y-3">
             <span className="block w-full rounded-full bg-amber py-2.5 text-center text-sm font-semibold text-espresso-deep">Основная</span>
             <span className="block w-full rounded-full bg-espresso py-2.5 text-center text-sm font-semibold text-cream">Тёмная</span>
@@ -144,8 +145,9 @@ export function UiKitSlide() {
                 <span className="rounded-full bg-amber px-3 py-1 text-xs font-semibold text-espresso-deep">+</span>
               </div>
             </div>
-          </div>
-        </Card>
+            </div>
+          </Card>
+        </div>
       </div>
     </ContentSlide>
   )
